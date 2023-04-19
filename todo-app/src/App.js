@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { Header } from "./components/Header";
 import { TaskList } from "./components/TaskList";
 import { StyledButton } from "./components/StyledButton";
@@ -11,14 +11,15 @@ function App() {
     setActive(!active)
   }
   return (
-    <div className="App">
+    <>
+    <div className="App" style={active ? {filter: "blur(10px"} : null}>
       <Header/>
       <TaskList/>
       <StyledButton primary onClick={addClass}>Dodaj zadanie</StyledButton>
       <StyledButton>Usuń wszystko</StyledButton>
-      {active ? <AddTaskPopup addClass={addClass} active={active} setActive={setActive}/> : null}
-
     </div>
+    {active ? <AddTaskPopup addClass={addClass} active={active} setActive={setActive}/> : null}
+    </>
   );
 }
 
