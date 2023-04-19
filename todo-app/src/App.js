@@ -1,6 +1,7 @@
 import { Header } from "./components/Header";
 import { TaskList } from "./components/TaskList";
 import { StyledButton } from "./components/StyledButton";
+import { AddTaskPopup } from "./components/AddTaskPopup";
 import "./css/App.css"
 
 function App() {
@@ -10,6 +11,8 @@ function App() {
       <TaskList/>
       <StyledButton primary >Dodaj zadanie</StyledButton>
       <StyledButton>Usuń wszystko</StyledButton>
+      <AddTaskPopup/>
+
     </div>
   );
 }
