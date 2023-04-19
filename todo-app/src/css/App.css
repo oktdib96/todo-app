@@ -9,4 +9,5 @@
     width: 100vw;
     background-color: #0285ff;
     color: #353333;
+    overflow: hidden;
 }

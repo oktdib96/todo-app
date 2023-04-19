@@ -18,7 +18,7 @@ export const Item = () => {
             date: "2024-12-05"
         }
     ])
-    const [active, setActive] = useState(false);
+    
     const Task = tasks.map(task => (
         <li key={task.id} id={task.id}>
             <p>{task.text}</p><span>zrobić do: {task.date}</span>
