@@ -28,13 +28,16 @@ function App() {
   const addClass = () => {
     setActive(!active)
   }
+  const removeAllTasks = () => {
+    setTasks([])
+  }
   return (
     <>
     <div className="App" style={active ? {filter: "blur(10px"} : null}>
       <Header/>
       <TaskList tasks={tasks}/>
       <StyledButton primary onClick={addClass}>Dodaj zadanie</StyledButton>
-      <StyledButton>Usuń wszystko</StyledButton>
+      <StyledButton onClick={removeAllTasks}>Usuń wszystko</StyledButton>
     </div>
     {active ? <AddTaskPopup  addClass={addClass} active={active} setActive={setActive} tasks={tasks} setTasks={setTasks}/> : null}
     </>
