@@ -31,11 +31,18 @@ function App() {
   const removeAllTasks = () => {
     setTasks([])
   }
+  const removeTask = (id) => {
+    const newTasks = tasks
+    const index = newTasks.findIndex((task) => task.id === id);
+    newTasks.splice(index, 1);
+    setTasks([...newTasks])
+    console.log(tasks)
+  }
   return (
     <>
     <div className="App" style={active ? {filter: "blur(10px"} : null}>
       <Header/>
-      <TaskList tasks={tasks}/>
+      <TaskList tasks={tasks} setTasks={setTasks} remove={removeTask}/>
       <StyledButton primary onClick={addClass}>Dodaj zadanie</StyledButton>
       <StyledButton onClick={removeAllTasks}>Usuń wszystko</StyledButton>
     </div>
