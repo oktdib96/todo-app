@@ -1,10 +1,10 @@
 import { Item } from "./Item";
 import "../css/TaskList.css"
-export const TaskList = () => {
+export const TaskList = (props) => {
     return (
         <div className="tasks">
             <ul>
-                <Item/>
+                <Item tasks={props.tasks}/>
             </ul>
         </div>
     )
